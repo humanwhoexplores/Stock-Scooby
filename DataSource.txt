@@ -1,11 +1,11 @@
 This file lists the sources from where the data has been received.
 This is a private project and data used is not for commercial use.
 
-https://greenido.wordpress.com/2009/12/22/work-like-a-pro-with-yahoo-finance-hidden-api/
-It is a good page to look for some sources.
+http://ichart.finance.yahoo.com/table.csv?d=10&e=07&f=2016&g=d&a=01&b=01&c=2016%20&ignore=.csv&s=ITC
 
+by default the dates from which training has been done are 01 Jan 2014 to 07 Oct 2016
 
-http://ichart.finance.yahoo.com/table.csv?d=6&e=1&f=2015&g=d&a=7&b=19&c=2014%20&ignore=.csv&s=ITC
-
-this is a good url to get data,
-the date i a,
+for{
+    start date : a = 01; b = 01; c = 2014;
+    end   date : d = 10; e = 07; f = 2016;
+}
