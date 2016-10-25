@@ -5,7 +5,7 @@ http://ichart.finance.yahoo.com/table.csv?d=10&e=07&f=2016&g=d&a=01&b=01&c=2016%
 
 by default the dates from which training has been done are 01 Jan 2014 to 07 Oct 2016
 
-for{		     MM :    DD  :   YYYY
+for{
     start date : a = 01; b = 01; c = 2014;
     end   date : d = 10; e = 07; f = 2016;
 }
