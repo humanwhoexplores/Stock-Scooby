@@ -33,6 +33,12 @@ def get_data_frame(symbols, dates):
              but for any compamy listed on sensex, it may not trade for all
              days sensex has worked,, so we take a left join
         """
+        #using fillna() to fill missing values
+        #use ffill first to avoid peeping in future
+        #bfill is used if data is missing from beginning
+        df.fillna(method = "ffill", inplace = "TRUE")
+        df.fillna(method = "bfill", inplace = "TRUE")
+
     return df
 
 def normalize_data(df):
