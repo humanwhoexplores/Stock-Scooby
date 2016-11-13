@@ -6,7 +6,8 @@ import matplotlib.pyplot as plt
 #path = "./Data/SENSEX/<SYMBOL>.csv"
 
 def symbol_to_path(symbol, base_dir = "./Data/SENSEX"):
-    """Returns CSV file path for given symbol """
+    """Returns
+     CSV file path for given symbol """
     return os.path.join(base_dir, "{}.csv".format(str(symbol)))
 
 def get_data_frame(symbols, dates):
@@ -89,7 +90,7 @@ def test_run():
     start_date = '2014-01-01'
     end_date = '2016-10-07'
     dates = pd.date_range(start_date, end_date)
-    symbols = ['SENSEX']
+    symbols = ['SENSEX', 'TCS', 'ITC']
     df = get_data_frame(symbols, dates)
     #plot_data(df)
 
