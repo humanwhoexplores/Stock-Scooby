@@ -34,3 +34,32 @@ def kalman_filtertemp(df, sentiMatrix):
     value2 = myvalue*state_means[0][0]
     print "the price on day 2014-05-14 as predicted by noise and price of " , value2
      #print "state_covs is ", state_covs
+
+
+def get_sentimentstemp(df):
+    in_sample = df['2014-05-13']
+    #here the data frame has 3 columns SENSEX, TCS, ITC
+    #lets first predict for SENSEX
+    print "the values on date 2014-05-13 is " , in_sample['SENSEX']
+
+    # hey now i need to make a vector to store the polarity
+    # hey i may need to store in a matrix,,
+
+    dates = ["2014-05-13.txt", "2014-05-14.txt"]
+    sentiments = []
+    for date in dates:
+        lines = [line.rstrip('\n') for line in open('./Data/TwitterScraps/' + date)]
+        #lines is a vector of these lines
+        #sentiMatrix = TextBlob(lines[:]) hey textblob accepts a string not a list
+        sumSentiment = 0
+        for l in lines:
+            sumSentiment += TextBlob(l).sentiment.polarity
+
+        sentiments.append(sumSentiment/float(len(lines)))
+
+    #print "hey the sentiments are" , sentiments
+    temp = df['2014-05-13']['SENSEX']
+    print "hey temp is " , temp
+    return sentiments[0:1]
+
+
